@@ -4,7 +4,7 @@
 	"description": "Todo list application using express js",
 	"main": "index.js",
 	"scripts": {
-		"dev": "nodemon"
+		"start": "nodemon index.js"
 	},
 	"author": "ashiqfury",
 	"license": "ISC",
