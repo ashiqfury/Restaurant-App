@@ -47,20 +47,20 @@
 				postContainer.classList.toggle('active');
 			});
 
-			const trashcan = document.querySelectorAll('a.delete');
+			// const trashcan = document.querySelectorAll('a.delete');
 
-			for (let i = 0; i < trashcan.length; i++) {
-				trashcan[i].addEventListener('click', () => {
-					const endPoint = `/student/${trashcan[i].dataset.doc}`;
+			// for (let i = 0; i < trashcan.length; i++) {
+			// 	trashcan[i].addEventListener('click', () => {
+			// 		const endPoint = `/student/${trashcan[i].dataset.doc}`;
 
-					fetch(endPoint, {
-						method: 'DELETE',
-					})
-						.then((response) => response.json())
-						.then((data) => (window.location.href = data.redirect))
-						.catch((err) => console.log(err));
-				});
-			}
+			// 		fetch(endPoint, {
+			// 			method: 'DELETE',
+			// 		})
+			// 			.then((response) => response.json())
+			// 			.then((data) => (window.location.href = data.redirect))
+			// 			.catch((err) => console.log(err));
+			// 	});
+			// }
 		</script>
 	</body>
 </html>

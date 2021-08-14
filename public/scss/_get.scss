@@ -1,3 +1,12 @@
+// ::-webkit-scrollbar {
+// 	width: 7px;
+// 	height: 7px;
+// }
+// ::-webkit-scrollbar-thumb {
+// 	width: 5px;
+// 	background: gray;
+// }
+
 .getContainer {
 	position: relative;
 	width: 90%;
@@ -6,19 +15,26 @@
 	background: $white;
 	padding: 4px;
 	z-index: 5;
+	overflow: scroll;
+	height: 400px;
 
 	.headFlex {
 		width: 100%;
 		display: grid;
+		position: sticky;
+		top: 0;
 		grid-template-columns: 1fr 1fr 1fr;
-		background: $darkDesaturatedBlue;
-		color: $white;
+		// background: $darkDesaturatedBlue;
+		// color: $white;
+		color: #000;
 		border-radius: 5px 5px 0 0;
 		// padding: 5px 0;
 		border: none;
 		outline: none;
 		font-size: 8px;
 		grid-template-columns: 2fr 1fr 9fr;
+		grid-template-columns: 10% 10% 100%;
+
 		@media screen and (min-width: 768px) and (max-width: 1440px) {
 			font-size: 12px;
 		}
@@ -27,6 +43,8 @@
 			text-align: center;
 			border: 1px solid #000;
 			padding: 5px;
+			min-width: 40px;
+			background: lightsalmon;
 		}
 	}
 	.itemFlex {
@@ -42,7 +60,7 @@
 			transition: 150ms;
 			font-size: 8px;
 
-			grid-template-columns: 2fr 1fr 9fr;
+			grid-template-columns: 10% 10% 100%;
 			@media screen and (min-width: 768px) and (max-width: 1440px) {
 				font-size: 12px;
 			}
@@ -59,7 +77,8 @@
 			.flexItem {
 				text-align: left;
 				border: 1px solid #000;
-				padding: 5px;
+				padding: 3px;
+				min-width: 40px;
 			}
 		}
 	}

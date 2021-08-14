@@ -54,18 +54,22 @@ header p {
   background: white;
   padding: 4px;
   z-index: 5;
+  overflow: scroll;
+  height: 400px;
 }
 .getContainer .headFlex {
   width: 100%;
   display: grid;
+  position: sticky;
+  top: 0;
   grid-template-columns: 1fr 1fr 1fr;
-  background: #252a41;
-  color: white;
+  color: #000;
   border-radius: 5px 5px 0 0;
   border: none;
   outline: none;
   font-size: 8px;
   grid-template-columns: 2fr 1fr 9fr;
+  grid-template-columns: 10% 10% 100%;
 }
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .getContainer .headFlex {
@@ -76,6 +80,8 @@ header p {
   text-align: center;
   border: 1px solid #000;
   padding: 5px;
+  min-width: 40px;
+  background: lightsalmon;
 }
 .getContainer .itemFlex {
   width: 100%;
@@ -87,7 +93,7 @@ header p {
   cursor: pointer;
   transition: 150ms;
   font-size: 8px;
-  grid-template-columns: 2fr 1fr 9fr;
+  grid-template-columns: 10% 10% 100%;
 }
 @media screen and (min-width: 768px) and (max-width: 1440px) {
   .getContainer .itemFlex .delete {
@@ -104,7 +110,8 @@ header p {
 .getContainer .itemFlex .delete .flexItem {
   text-align: left;
   border: 1px solid #000;
-  padding: 5px;
+  padding: 3px;
+  min-width: 40px;
 }
 
 .warning {
