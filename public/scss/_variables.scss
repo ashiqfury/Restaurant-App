@@ -1,0 +1,51 @@
+// Device
+$mobile: 375px;
+$desktop: 1440px;
+
+// Colors
+// primary
+$limeGreen: hsl(163, 72%, 41%);
+$brightRed: hsl(356, 69%, 56%);
+$facebook: hsl(208, 92%, 53%);
+$twitter: hsl(203, 89%, 53%);
+$instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$youTube: hsl(348, 97%, 39%);
+
+// dark theme
+$darkToggleFrom: hsl(210, 78%, 56%);
+$darkToggleTo: hsl(146, 68%, 55%);
+
+// light theme
+$lightToggle: hsl(230, 22%, 74%);
+
+// neutrals
+
+// Dark theme
+// BG
+$veryDarkBlue: hsl(230, 17%, 14%);
+// Top BG Pattern
+$veryDarkBlueBg: hsl(232, 19%, 15%);
+// Card BG
+$darkDesaturatedBlue: hsl(228, 28%, 20%);
+// Text
+$desaturatedBlue: hsl(228, 34%, 66%);
+// Text
+$white: hsl(0, 0%, 100%);
+
+// Light theme
+// BG
+$white: hsl(0, 0%, 100%);
+// Top BG Pattern
+$veryPaleBlue: hsl(225, 100%, 98%);
+// Card BG
+$lightGrayishBlue: hsl(227, 47%, 96%);
+// Text
+$darkGrayishBlue: hsl(228, 12%, 44%);
+// Text
+$veryDarkBlue: hsl(230, 17%, 14%);
+
+// Fonts
+$font: 'Inter', sans-serif;
+$font-size: 14px; // Overview and Headings
+$font-light: 400;
+$font-medium: 700;

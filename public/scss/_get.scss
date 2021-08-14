@@ -1,0 +1,71 @@
+.getContainer {
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+	border-radius: 5px;
+	background: $white;
+	padding: 4px;
+	z-index: 5;
+
+	.headFlex {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		background: $darkDesaturatedBlue;
+		color: $white;
+		border-radius: 5px 5px 0 0;
+		// padding: 5px 0;
+		border: none;
+		outline: none;
+		font-size: 8px;
+		grid-template-columns: 2fr 1fr 9fr;
+		@media screen and (min-width: 768px) and (max-width: 1440px) {
+			font-size: 12px;
+		}
+
+		.flexItem {
+			text-align: center;
+			border: 1px solid #000;
+			padding: 5px;
+		}
+	}
+	.itemFlex {
+		width: 100%;
+
+		.delete {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			// padding: 5px;
+			// margin: 3px 0;
+			color: $veryDarkBlueBg;
+			cursor: pointer;
+			transition: 150ms;
+			font-size: 8px;
+
+			grid-template-columns: 2fr 1fr 9fr;
+			@media screen and (min-width: 768px) and (max-width: 1440px) {
+				font-size: 12px;
+			}
+
+			&:hover {
+				background: hsl(228, 34%, 86%);
+			}
+
+			&:last-child {
+				border-radius: 0 0 5px 5px;
+				border: none;
+			}
+
+			.flexItem {
+				text-align: left;
+				border: 1px solid #000;
+				padding: 5px;
+			}
+		}
+	}
+}
+.warning {
+	text-align: center;
+	margin: 20px 0;
+	font-size: 22px;
+}
