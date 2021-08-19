@@ -31,10 +31,7 @@ app.use(
 );
 
 // Mongo db connection
-const dbUser = process.env.DB_HOST_NAME;
-const dbPassword = process.env.DB_SECRET;
-const dbName = process.env.DB_NAME;
-const dbURI = `mongodb+srv://${dbUser}:${dbPassword}@cluster0.mfyow.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const dbURI = process.env.MONGODB_URI;
 mongoose
 	.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 	.then((response) => console.log('Connected to database!'))
