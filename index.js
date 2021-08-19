@@ -44,25 +44,8 @@ app.get('/', (req, res) => {
 	res.redirect('/student');
 });
 
-// Post req
-
-// Getting all test data
-app.get('/student/get-all', (req, res) => {
-	Student.find()
-		.then((result) => {
-			res.send(result);
-		})
-
-		.catch((err) => console.log(err));
-});
-
 // All todo routes
 app.use(studentRouter);
-
-// About page
-// app.get('/about', (req, res) => {
-// 	res.render('about', { title: 'About Page' });
-// });
 
 // 404 page
 app.use((req, res) => {
