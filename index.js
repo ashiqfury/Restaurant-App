@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const hostname = 'localhost';
 const port = process.env.PORT || 2506;
-const port = require('path');
+const path = require('path');
 
 const studentRouter = require('./routes/studentRoutes');
 const Student = require('./models/studentModel');
