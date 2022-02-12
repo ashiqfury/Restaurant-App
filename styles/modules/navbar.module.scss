@@ -1,0 +1,86 @@
+@import '../colors';
+
+.container {
+	height: 100px;
+	padding: 0 50px;
+	background: $clr-primary;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	z-index: 99;
+
+	.item {
+		flex: 1;
+		display: flex;
+		align-items: center;
+
+		&:nth-child(2) {
+			flex: 3;
+			justify-content: center;
+		}
+		&:last-child {
+			justify-content: flex-end;
+		}
+	}
+
+	// left
+	.callButton {
+		background: $clr-white;
+		padding: 10px;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+	}
+
+	.texts {
+		margin-left: 20px;
+		color: $clr-white;
+
+		.text {
+			&:first-child {
+				font-size: 12px;
+				font-weight: 500;
+			}
+			&:last-child {
+				font-size: 20px;
+				font-weight: bold;
+			}
+		}
+	}
+
+	// center
+	.list {
+		display: flex;
+		align-items: center;
+		list-style: none;
+		color: $clr-white;
+
+		&Item {
+			margin: 20px;
+			font-weight: 500;
+		}
+	}
+
+	// right
+	.cart {
+		position: relative;
+
+		.counter {
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			width: 20px;
+			height: 20px;
+			background: $clr-white;
+			border-radius: 50%;
+			padding: 3px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			color: $clr-primary;
+		}
+	}
+}
