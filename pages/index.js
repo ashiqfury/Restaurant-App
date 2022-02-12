@@ -1,3 +1,4 @@
+import Featured from 'components/Featured'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
@@ -9,7 +10,7 @@ export default function Home() {
 				<meta name="description" content="Best Food Delivery Shop" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			homepage
+			<Featured />
 		</div>
 	)
 }
