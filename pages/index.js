@@ -1,7 +1,7 @@
 import Featured from 'components/Featured'
 import PizzaList from 'components/PizzaList'
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '@/s_module/Home.module.scss'
 
 export default function Home() {
 	return (

@@ -1,0 +1,42 @@
+@import '../colors';
+
+.container {
+	height: calc(100vh - 100px);
+	background: #222;
+	display: flex;
+
+	.item {
+		flex: 1;
+		position: relative;
+		display: flex;
+
+		&:last-child {
+			flex: 2;
+			display: flex;
+			justify-content: space-between;
+			padding: 50px;
+		}
+
+		.card {
+			flex: 1;
+			padding: 0 20px;
+		}
+
+		.title {
+			font-size: 18px;
+			color: $clr-secondary;
+			font-size: 1.3rem;
+		}
+
+		.text {
+			margin: 20px 0;
+			color: lightgray;
+			font-size: 1.3rem;
+		}
+
+		.motto {
+			font-size: 36px;
+			color: rgb(211, 211, 211);
+		}
+	}
+}
