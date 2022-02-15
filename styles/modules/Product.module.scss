@@ -3,6 +3,12 @@
 .container {
 	height: calc(100vh - 100px);
 	display: flex;
+	@media screen and (max-width: 480px) {
+		height: auto;
+		text-align: center;
+		flex-direction: column;
+		margin-top: 20px;
+	}
 
 	.left {
 		flex: 1;
@@ -15,11 +21,21 @@
 			width: 80%;
 			height: 80%;
 			position: relative;
+			@media screen and (max-width: 480px) {
+				width: 70vw;
+				height: 70vw;
+			}
 		}
 	}
 	.right {
 		flex: 1;
 		padding: 20px;
+
+		.title {
+			@media screen and (max-width: 480px) {
+				margin: 5px;
+			}
+		}
 
 		.price {
 			color: $clr-primary;
@@ -32,6 +48,10 @@
 			width: 40%;
 			display: flex;
 			justify-content: space-between;
+			@media screen and (max-width: 480px) {
+				width: 100%;
+				padding: 0 30px;
+			}
 
 			.size {
 				width: 40px;
@@ -52,6 +72,13 @@
 			}
 		}
 
+		.choose {
+			@media screen and (max-width: 480px) {
+				font-size: 24px;
+				margin-top: 20px;
+			}
+		}
+
 		.number {
 			position: absolute;
 			top: -5px;
@@ -66,18 +93,32 @@
 		.ingredients {
 			display: flex;
 			margin-bottom: 30px;
+			@media screen and (max-width: 480px) {
+				flex-direction: column;
+			}
 
 			.option {
 				display: flex;
 				align-items: center;
-				justify-content: center;
+				// justify-content: center;
 				margin-right: 10px;
 				font-size: 14px;
 				font-weight: 500;
+				@media screen and (max-width: 480px) {
+					margin-bottom: 5px;
+					font-size: 18px;
+				}
 
 				.checkbox {
-					width: 20px;
-					height: 20px;
+					$size: 20px;
+					width: $size;
+					height: $size;
+					@media screen and (max-width: 480px) {
+						$size: 25px;
+						width: $size;
+						height: $size;
+						margin-right: 10px;
+					}
 				}
 			}
 		}
@@ -85,6 +126,11 @@
 		.quantity {
 			width: 50px;
 			height: 30px;
+			@media screen and (max-width: 480px) {
+				height: 50px;
+				font-size: 18px;
+				text-align: center;
+			}
 		}
 		.button {
 			height: 30px;
@@ -95,6 +141,11 @@
 			padding: 0 10px;
 			font-weight: 500;
 			cursor: pointer;
+			@media screen and (max-width: 480px) {
+				height: 50px;
+				padding: 10px 20px;
+				font-size: 18px;
+			}
 		}
 	}
 }
