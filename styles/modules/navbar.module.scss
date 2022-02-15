@@ -84,3 +84,14 @@
 		}
 	}
 }
+
+@media screen and (max-width: 480px) {
+	.container {
+		.item:first-child {
+			flex: 3;
+		}
+		.item:nth-child(2) {
+			display: none;
+		}
+	}
+}

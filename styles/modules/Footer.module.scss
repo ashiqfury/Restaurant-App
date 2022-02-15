@@ -40,3 +40,25 @@
 		}
 	}
 }
+
+@media screen and (max-width: 480px) {
+	.container {
+		height: auto;
+		text-align: center;
+
+		.item {
+			flex-direction: column;
+
+			&:first-child {
+				display: none;
+			}
+
+			.title {
+				font-size: 30px;
+			}
+			.text {
+				font-size: 20px;
+			}
+		}
+	}
+}
