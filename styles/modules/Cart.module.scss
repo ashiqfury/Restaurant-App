@@ -104,17 +104,37 @@
 			}
 
 			.title {
+				font-size: 26px;
 				@media screen and (max-width: 480px) {
 					font-size: 30px;
 				}
 			}
 
 			.totalText {
+				margin-bottom: 5px;
+				font-size: 20px;
 				@media screen and (max-width: 480px) {
 					font-size: 22px;
 				}
 				&Title {
 					margin-right: 10px;
+				}
+			}
+
+			.paymentMethods {
+				margin-top: 10px;
+				display: flex;
+				flex-direction: column;
+				.payButton {
+					padding: 10px 5px;
+					cursor: pointer;
+					margin: 20px 0 5px;
+					background: white;
+					color: teal;
+					font-weight: bold;
+					border: none;
+					border-radius: 3px;
+					font-size: 16px;
 				}
 			}
 

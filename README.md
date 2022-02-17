@@ -1,3 +1,10 @@
+### Paypal Docs:
+
+- [paypal payment](https://paypal.github.io/react-paypal-js/?path=/docs/example-paypalbuttons--default)
+- [create personal and business accounts](https://developer.paypal.com/developer/accounts)
+- [create a payment application](https://developer.paypal.com/developer/applications)
+- [testing payment](https://sandbox.paypal.com/signin)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
