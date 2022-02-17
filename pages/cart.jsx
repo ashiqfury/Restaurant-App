@@ -10,6 +10,7 @@ import {
 	PayPalButtons,
 	usePayPalScriptReducer,
 } from '@paypal/react-paypal-js'
+import OrderDetails from 'components/OrderDetails'
 
 const Cart = () => {
 	const [open, setOpen] = useState(false)
@@ -18,7 +19,7 @@ const Cart = () => {
 	const dispatch = useDispatch()
 	const router = useRouter()
 
-	const createOrders = async data => {
+	const createOrder = async data => {
 		try {
 			const res = await axios.post(`http://localhost:3000/api/orders`, data)
 			res.status === 201 && router.push(`/orders/${res.data._id}`)
@@ -46,7 +47,7 @@ const Cart = () => {
 					currency: currency,
 				},
 			})
-		}, [currency, showSpinner, dispatch, options])
+		}, [currency, showSpinner])
 
 		return (
 			<>
@@ -76,7 +77,7 @@ const Cart = () => {
 					onApprove={function (data, actions) {
 						return actions.order.capture().then(function (details) {
 							const shipping = details.purchase_units[0].shipping
-							createOrders({
+							createOrder({
 								customer: shipping.name.full_name,
 								address: shipping.address.address_line_1,
 								total: cart.total,
@@ -171,6 +172,7 @@ const Cart = () => {
 					)}
 				</div>
 			</div>
+			{cash && <OrderDetails total={cart.total} createOrder={createOrder} />}
 		</div>
 	)
 }
