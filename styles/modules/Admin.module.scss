@@ -1,0 +1,29 @@
+.container {
+	padding: 50px;
+	display: flex;
+
+	.item {
+		flex: 1;
+
+		.table {
+			width: 100%;
+			border-spacing: 20px;
+			text-align: left;
+
+			.button {
+				color: white;
+				padding: 5px;
+				border: none;
+				cursor: pointer;
+
+				&:first-child {
+					background: teal;
+					margin-right: 10px;
+				}
+				&:last-child {
+					background: crimson;
+				}
+			}
+		}
+	}
+}
