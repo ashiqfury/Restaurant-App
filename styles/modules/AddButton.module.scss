@@ -1,0 +1,130 @@
+@import '../colors';
+
+.mainAddButton {
+	padding: 10px;
+	margin: 20px;
+	background: $clr-primary;
+	color: white;
+	width: 150px;
+	border-radius: 10px;
+	font-weight: 500;
+	text-align: center;
+	cursor: pointer;
+	border: none;
+	font-size: 1rem;
+}
+
+.container {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(245, 240, 240, 0.52);
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1rem;
+
+	.wrapper {
+		width: 700px;
+		background: white;
+		padding: 10px 50px;
+		border-radius: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		position: relative;
+
+		.close {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background: black;
+			color: white;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			top: -10px;
+			right: -10px;
+			border: none;
+		}
+
+		.item {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 10px;
+		}
+		.label {
+			margin: 10px 0 5px;
+			font-size: 1.1rem;
+			font-weight: 500;
+		}
+		.input,
+		.textarea {
+			outline: none;
+			font-size: 1rem;
+			font-family: sans-serif;
+			padding: 5px 10px;
+		}
+		.input {
+			border: none;
+			border-bottom: 1px solid gray;
+		}
+
+		.prices {
+			display: flex;
+			justify-content: space-between;
+		}
+		.inputSmall {
+			width: 25%;
+		}
+		.extra {
+			display: flex;
+			justify-content: space-between;
+
+			&Items {
+				margin: 10px 0;
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			&Item {
+				padding: 5px 10px;
+				font-size: 14px;
+				border: 1px solid tomato;
+				background: white;
+				color: tomato;
+				margin-right: 10px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			&Button {
+				width: 25%;
+				border: none;
+				background: tomato;
+				border-radius: 5px;
+				color: white;
+				font-weight: 500;
+				cursor: pointer;
+				padding: 10px 5px;
+				align-self: flex-end;
+				font-size: 1rem;
+			}
+		}
+		.addButton {
+			width: 25%;
+			border: none;
+			background: teal;
+			border-radius: 5px;
+			color: white;
+			font-weight: 500;
+			cursor: pointer;
+			padding: 10px 5px;
+			align-self: flex-end;
+			font-size: 1rem;
+		}
+	}
+}

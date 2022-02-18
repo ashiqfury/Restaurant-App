@@ -1,0 +1,134 @@
+import styles from '@/s_module/AddButton.module.scss'
+import { useState } from 'react'
+import axios from 'axios'
+import { useRouter } from 'next/router'
+
+const Add = ({ setClose }) => {
+	const [file, setFile] = useState(null)
+	const [title, setTitle] = useState(null)
+	const [desc, setDesc] = useState(null)
+	const [prices, setPrices] = useState([])
+	const [extraOptions, setExtraOptions] = useState([])
+	const [extra, setExtra] = useState(null)
+
+	const changePrice = (e, index) => {
+		const currentPrices = prices
+		currentPrices[index] = e.target.value
+		setPrices(currentPrices)
+	}
+	const handleExtraInput = e => {
+		setExtra({ ...extra, [e.target.name]: e.target.value })
+	}
+	const handleExtra = () => {
+		setExtraOptions(prev => [...prev, extra])
+	}
+
+	const handleCreate = async () => {
+		const data = new FormData()
+		data.append('file', file)
+		data.append('upload_preset', 'uploads')
+		try {
+			const uploadRes = await axios.post(
+				'https://api.cloudinary.com/v1_1/ashiqfury/image/upload',
+				data
+			)
+			const { url } = uploadRes.data
+			const newProduct = {
+				title,
+				desc,
+				prices,
+				extraOptions,
+				img: url,
+			}
+			const res = await axios.post('http://localhost:3000/api/products', newProduct)
+			setClose(true)
+		} catch (err) {
+			console.log(err)
+		}
+	}
+
+	return (
+		<div className={styles.container}>
+			<div className={styles.wrapper}>
+				<button className={styles.close} onClick={() => setClose(true)}>
+					X
+				</button>
+				<h1>Add a new Pizza</h1>
+				<div className={styles.item}>
+					<label className={styles.label}>Choose an image</label>
+					<input type="file" className={styles.input} onChange={e => setFile(e.target.files[0])} />
+				</div>
+				<div className={styles.item}>
+					<label className={styles.label}>Title</label>
+					<input type="text" className={styles.input} onChange={e => setTitle(e.target.value)} />
+				</div>
+				<div className={styles.item}>
+					<label className={styles.label}>Description</label>
+					<textarea
+						rows={4}
+						type="text"
+						className={styles.textarea}
+						onChange={e => setDesc(e.target.value)}
+					></textarea>
+					<div className={styles.item}>
+						<label className={styles.label}>Prices</label>
+						<div className={styles.prices}>
+							<input
+								type="number"
+								placeholder="Small"
+								onChange={e => changePrice(e, 0)}
+								className={`${styles.input} ${styles.inputSmall}`}
+							/>
+							<input
+								type="number"
+								placeholder="Medium"
+								onChange={e => changePrice(e, 1)}
+								className={`${styles.input} ${styles.inputSmall}`}
+							/>
+							<input
+								type="number"
+								placeholder="Large"
+								onChange={e => changePrice(e, 2)}
+								className={`${styles.input} ${styles.inputSmall}`}
+							/>
+						</div>
+					</div>
+					<div className={styles.item}>
+						<label className={styles.label}>Extras</label>
+						<div className={styles.extra}>
+							<input
+								type="text"
+								placeholder="Item"
+								name="text"
+								onChange={handleExtraInput}
+								className={`${styles.input} ${styles.inputSmall}`}
+							/>
+							<input
+								type="number"
+								placeholder="Price"
+								name="price"
+								onChange={handleExtraInput}
+								className={`${styles.input} ${styles.inputSmall}`}
+							/>
+							<button className={styles.extraButton} onClick={handleExtra}>
+								Add
+							</button>
+						</div>
+						<div className={styles.extraItems}>
+							{extraOptions.map(option => (
+								<span key={option.text} className={styles.extraItem}>
+									{option.text}
+								</span>
+							))}
+						</div>
+					</div>
+					<button className={styles.addButton} onClick={handleCreate}>
+						Create
+					</button>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+export default Add
