@@ -10,6 +10,7 @@ const Add = ({ setClose }) => {
 	const [prices, setPrices] = useState([])
 	const [extraOptions, setExtraOptions] = useState([])
 	const [extra, setExtra] = useState(null)
+	const router = useRouter()
 
 	const changePrice = (e, index) => {
 		const currentPrices = prices
@@ -42,6 +43,7 @@ const Add = ({ setClose }) => {
 			}
 			const res = await axios.post('http://localhost:3000/api/products', newProduct)
 			setClose(true)
+			res.data && router.reload()
 		} catch (err) {
 			console.log(err)
 		}
